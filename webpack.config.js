@@ -24,15 +24,6 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|vue)$/,
-                loader: 'eslint-loader',
-                enforce: 'pre',
-                exclude: /node_modules/,
-                options: {
-                    formatter: require('eslint-friendly-formatter')
-                }
-            },
-            {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
@@ -42,6 +33,6 @@ module.exports = {
     },
     plugins: [
         new webpack.DefinePlugin({'process.env.NODE_ENV': JSON.stringify(ENV)}),
-        new CleanWebpackPlugin([path.join(path.resolve('./dist'), '*')], {verbose: true}),
+        new CleanWebpackPlugin([path.join(path.resolve('./dist'), '*')], {verbose: true})
     ]
 };
